@@ -106,7 +106,7 @@ $(function() {
          });
 
          it('should have at least one single entry element',function(done){
-            expect(container.has('.entry-link').length>0).toBe(true);
+            expect(container.children().length>0).toBe(true);
             done();
          });
 
@@ -117,5 +117,19 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+        var entry = $('.feed .entry:first-child'),
+            originalText;
+         beforeEach(function(done){
+            originalText=entry.html();
+            console.log(originalText);
+            loadFeed(1,function(){ //change a feed
+                done();
+            });
+         });
+
+         it('should contain at least one entry',function(done){
+            expect(entry).toBeDefined();
+            done();
+         });         
     });
 }());
