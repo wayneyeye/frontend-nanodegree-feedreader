@@ -73,9 +73,18 @@ $(function() {
                 menuIcon.click(); //triger it by click()
                 expect($('body').hasClass('menu-hidden')).not.toBe(true);
             }
+            else{
+                menuIcon.click();
+                expect($('body').hasClass('menu-hidden')).toBe(true);
+            }
+            //Two separate test to ensure the test is not dependent on the initial status
             if ($('body').hasClass('menu-hidden')!=true){
                 menuIcon.click();
                 expect($('body').hasClass('menu-hidden')).toBe(true);
+            }
+            else{
+                menuIcon.click(); 
+                expect($('body').hasClass('menu-hidden')).not.toBe(true);
             }
          });
     });
