@@ -44,16 +44,15 @@ $(function() {
 
 
     describe('Initial Entries', function() {
-         var container = $('.feed');
+         var container;
 
          beforeEach(function(done){
-            loadFeed(0,function(){
-                done();
-            });
+            loadFeed(0,done);
          });
 
          it('should have at least one single entry element',function(done){
-            expect(container.children().length>0).toBe(true);
+            container=$('.feed .entry');
+            expect(container.length>0).toBe(true);
             done();
          });
 
