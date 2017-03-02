@@ -99,6 +99,7 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
          var container = $('.feed');
+
          beforeEach(function(done){
             loadFeed(0,function(){
                 done();
@@ -117,18 +118,24 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-        var entry = $('.feed .entry:first-child'),
-            originalText;
+        var container = $('.feed'),
+            originalHTML,newHTML;
          beforeEach(function(done){
-            originalText=entry.html();
-            console.log(originalText);
+            try { 
+            if (allFeeds.length<2) throw "only one feed to use!";//error handling for out of bound array access
+            loadFeed(0,function(){ //init a feed
+                done();
+            });
+            originalHTML=container.children()[0];
             loadFeed(1,function(){ //change a feed
                 done();
             });
+            }
          });
 
-         it('should contain at least one entry',function(done){
-            expect(entry).toBeDefined();
+         it('should change the content',function(done){
+            newHTML=container.children()[0];
+            expect(newHTML).not.toBe(originalHTML);//compare old and new
             done();
          });         
     });
