@@ -50,10 +50,9 @@ $(function() {
             loadFeed(0,done);
          });
 
-         it('should have at least one single entry element',function(done){
+         it('should have at least one single entry element',function(){
             container=$('.feed .entry');
             expect(container.length>0).toBe(true);
-            done();
          });
 
     });
