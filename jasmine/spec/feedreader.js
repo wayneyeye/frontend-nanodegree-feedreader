@@ -74,6 +74,6 @@ $(function() {
             newHTML=container.children()[0];
             expect(newHTML).not.toBe(originalHTML);//compare old and new
             done();
-         });         
+        });         
     });
 }());
