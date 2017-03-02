@@ -121,7 +121,6 @@ $(function() {
         var container = $('.feed'),
             originalHTML,newHTML;
          beforeEach(function(done){
-            try { 
             if (allFeeds.length<2) throw "only one feed to use!";//error handling for out of bound array access
             loadFeed(0,function(){ //init a feed
                 done();
@@ -130,7 +129,6 @@ $(function() {
             loadFeed(1,function(){ //change a feed
                 done();
             });
-            }
          });
 
          it('should change the content',function(done){
