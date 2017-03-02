@@ -34,23 +34,11 @@ $(function() {
 
         it('is hidden/display by clicking',function(){
             menuIcon = $('.menu-icon-link');
-            if ($('body').hasClass('menu-hidden')){
                 menuIcon.click(); //triger it by click()
                 expect($('body').hasClass('menu-hidden')).not.toBe(true);
-            }
-            else{
+            //Two separate tests 
                 menuIcon.click();
                 expect($('body').hasClass('menu-hidden')).toBe(true);
-            }
-            //Two separate test to ensure the test is not dependent on the initial status
-            if ($('body').hasClass('menu-hidden')!=true){
-                menuIcon.click();
-                expect($('body').hasClass('menu-hidden')).toBe(true);
-            }
-            else{
-                menuIcon.click(); 
-                expect($('body').hasClass('menu-hidden')).not.toBe(true);
-            }
          });
     });
 
