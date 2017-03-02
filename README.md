@@ -2,6 +2,8 @@
 
 In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
 
+# How will I RUN this project?
+Clone or fork this repo. Pull the files, scripts to your local machine. Open the index.html with chrome or other internet browsers. You should see Jasmine works!
 
 ## Why this Project?
 
